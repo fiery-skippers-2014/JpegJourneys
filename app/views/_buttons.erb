@@ -1,0 +1,11 @@
+<% @logged_in_user = current_user %>
+
+<% if @logged_in_user %>
+  <% if @logged_in_user.id == survey.user_id %>
+    <span><a href="/surveys/<%= survey.id %>/delete"><button type="button" id="bttn" class="brown">Delete</button></a></span>
+  <% end %>
+<% end %>
+
+
+
+        

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!--webfonts-->
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="/js/application.js"></script>
+
+  <title>JpegJourneys</title>
+</head>
+<body>
+  <%= erb :_header %>
+
+      <div class="container">
+
+        <% if !flash.empty? %>
+          <% if flash[:success] %>
+            <div class="alert-success"><%= flash[:success] %></div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="alert-error"><%= flash[:error] %></div>
+          <% end %>
+        <% end %>
+
+        <%= yield %>
+
+        <%= erb :_footer %>
+      </div>
+  
+</body>
+</html>
