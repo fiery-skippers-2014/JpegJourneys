@@ -4,8 +4,8 @@ body {
   max-width: 960px;
   max-height: 960px;
   height: auto;
-  background-image: url('http://i.imgur.com/DPpV5Qu.png');
-  /*background-image: url('http://i.imgur.com/T4bGNDL.jpg');*/
+  /*background-image: url('http://i.imgur.com/DPpV5Qu.png');*/
+  background-image: url('http://i.imgur.com/T4bGNDL.jpg');
   background-attachment:fixed;
   background-position:center;
   background-size: 100%;
@@ -22,7 +22,7 @@ body {
 
 
 a {
-  color: #8af6fe;
+  color: #efb478;
   letter-spacing: 0.5px;
   font-size:1em;
   font-family:Helvetica;
@@ -30,7 +30,7 @@ a {
 }
 
 a:visited {
-  color: #80dced;
+  color: #efb478;
 }
 
 .container {
