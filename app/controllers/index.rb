@@ -1,4 +1,9 @@
 get '/' do
+  @journeys = Journey.all
+  erb :index
+end
+
+get '/photos' do
   erb :photos
 end
 

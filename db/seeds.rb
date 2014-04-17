@@ -2,6 +2,8 @@
   @this_user = User.create :name => Faker::Name.name, :email => Faker::Internet.email, :password_hash => 'password'
 end
 
+
+
 SeededUser.create(:user_name => "Purple Dragon", :user_email => "charlesarcinega@gmail.com", :user_password_hash => "password")
 
 SeededUser.create(:user_name => "Jen", :user_email => "jrygh00@gmail.com", :user_password_hash => "password")

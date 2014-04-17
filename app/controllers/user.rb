@@ -4,9 +4,9 @@
 get '/users/:user_id' do
   @logged_in_user = current_user
   @user = User.find(params[:user_id])
-  @users_surveys = Survey.where(user_id: @user.id).order("created_at DESC")
-  @taken_ids = CompletedSurvey.where(user: @user.id)
-  @completed_surveys = Survey.where(id: @taken_ids).order("created_at DESC")
+  @users_journeys = Journey.where(user_id: @user.id).order("created_at DESC")
+  # @taken_ids = CompletedSurvey.where(user: @user.id)
+  # @completed_surveys = Survey.where(id: @taken_ids).order("created_at DESC")
   erb :'user/profile'
 end
 
@@ -27,7 +27,7 @@ post '/register' do
     password_salt: password_salt
   )
   if @user.save
-    flash[:success] = "Welcome to QuizzerFly!"
+    flash[:success] = "Welcome to JpegJourneys!"
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
   else
