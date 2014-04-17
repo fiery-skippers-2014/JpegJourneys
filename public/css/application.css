@@ -2,6 +2,7 @@ body {
   /*margin-top: -17px;*/
   padding-top:0px;
   max-width: 960px;
+  max-height: 960px;
   height: auto;
   background-image: url('http://i.imgur.com/DPpV5Qu.png');
   /*background-image: url('http://i.imgur.com/T4bGNDL.jpg');*/
@@ -16,6 +17,9 @@ body {
   margin: -10px auto 0 auto;
   /*line-height: 18px;*/
 }
+
+
+
 
 a {
   color: #8af6fe;
@@ -327,6 +331,26 @@ nav ul li {
   color: #dd4b39;
 }
 
+
+/* GOOGLE MAPS */
+
+#map-canvas {
+  height: 60%;
+  width: 60%;
+  margin: 0px;
+  padding: 0px
+}
+
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
 
 /* END OF OUR CSS */
 

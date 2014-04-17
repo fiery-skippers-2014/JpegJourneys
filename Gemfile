@@ -17,7 +17,9 @@ gem 'rake'
 gem 'bcrypt-ruby'
 gem 'gravtastic'
 gem 'sinatra-flash'
-
+gem 'flickraw'
+gem 'httparty'
+gem 'dotenv'
 gem 'shotgun'
 
 group :test do

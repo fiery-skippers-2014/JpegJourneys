@@ -1,50 +1,46 @@
 //Application JS
 
-$(document).ready(function() {
-  var view = new View()
-  var controller = new Controller(view)
-});
-
 //Controller
-
-function Controller (view) {
-  this.view = view;
-   $('#addQuestionBtn').click(this.view.addQuestion);
-    $('#questions').on('click','.addAnswerBtn',this.view.addChoice)
-}
 
 //View JS
 
-View = function(){
- event.preventDefault();
-  questionCount = 0;
-}
 
-View.prototype = {
-  addQuestion: function(e) {
-    e.preventDefault();
-    questionCount++;
-    var question = new Question(questionCount)
-    $('#questions').append(question.node);},
 
-  addChoice: function (e) {
-    e.preventDefault();
-    var $this = $(e.target)
-    var question_id = $this.parents()[0].id
-    var currentChoiceInputs = $this.prev()
-    var choice_number = currentChoiceInputs.children('input').length + 1
-    var choice = new Choice(question_id, choice_number)
-    currentChoiceInputs.append(choice.node);
+var geocoder;
+var map;
+
+$('.destination').on('submit',codeAddress);
+
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  console.log("GEOCODER!!!!!!!!")
+  console.log(geocoder)
+
+  var latlng = new google.maps.LatLng(37.774, -122.419);
+  console.log("LATLNG!!!!!!!!!!")
+  console.log(latlng)
+  var mapOptions = {
+    zoom: 8,
+    center: latlng
   }
-
+  console.log("mapOPTIONS!!!!!!!!")
+  console.log(mapOptions)
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 
-function Question(question_count) {
-  this.node = '<div class="question" id="question' + question_count + '"><div id="questionInput"><input type="text" name="question' + question_count + '" placeholder="Question"><br></div><div id="answerInputs"></div><a class="addAnswerBtn" id="addAnswerBtn" href="#"> Add Choice</a>'
+function codeAddress() {
+  var address = document.getElementById('address').value;
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });
 }
 
-function Choice(question_id,choice_number) {
-  this.node = '<input type="text" name="' + question_id+ 'choice' + choice_number + '" placeholder="Choice"><br>'
-}
-
-
+google.maps.event.addDomListener(window, 'load', initialize);

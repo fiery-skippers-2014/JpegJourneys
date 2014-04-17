@@ -23,6 +23,9 @@ require 'sinatra/flash'
 require "sinatra/reloader" if development?
 
 require 'erb'
+require 'httparty'
+require 'flickraw'
+require 'dotenv'
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
@@ -44,6 +47,9 @@ end
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
+Dotenv.load
 
+FlickRaw.api_key = ENV['API_KEY']
+FlickRaw.shared_secret = ENV['SHARED_SECRET']
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
