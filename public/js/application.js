@@ -4,12 +4,15 @@
 
 //View JS
 
-
+// $(document).ready(function(){
 
 var geocoder;
 var map;
-
+// initialize();
 $('.destination').on('submit',codeAddress);
+$('.destination').on('submit',doFlickr);
+
+// });
 
 function initialize() {
   geocoder = new google.maps.Geocoder();
@@ -43,4 +46,4 @@ function codeAddress() {
   });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+ google.maps.event.addDomListener(window, 'load', initialize);
