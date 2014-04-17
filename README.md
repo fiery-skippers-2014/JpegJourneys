@@ -13,12 +13,6 @@ Trello
 
 <a href="https://trello.com/b/sF41LyUg/jpegjourneys">JpegJourneys Trello</a>
 
-
-Wireframe 
----------
-
-<a href="">JpegJourneys Wireframe</a>
-
 Git Workflow
 -----------
 1. Each feature gets its own branch
