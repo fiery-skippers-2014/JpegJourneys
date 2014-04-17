@@ -1,6 +1,19 @@
-<div id="content" class="main container-mid">
+<div class="sidebar">This is the sidebar</div>
+
+
+
+<div id="content">
 
 <h3>Welome to JpegJourneys</h3>
+
+
+<% if @journeys %>
+  <% @journeys.each do |journey| %>
+
+    <% journey.title %>
+
+  <% end %>
+<% end %>
 
 </div>
 
