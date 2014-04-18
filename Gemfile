@@ -34,5 +34,5 @@ end
 
 group :test, :development do
   gem 'factory_girl', '~> 2.0.0'
-  gem 'faker'
+  # gem 'faker'
 end

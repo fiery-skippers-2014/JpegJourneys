@@ -1,11 +1,7 @@
 get '/' do
   @journeys = Journey.all
-  erb :index
+  erb :photos
 end
-
-
-
-
 
 get '/photos/new' do
   erb :get_photos
