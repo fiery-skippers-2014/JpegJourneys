@@ -3,18 +3,27 @@
   <form class="destination" action="/photos" method="post">
 
     <label for="user">Find based on tags</label>
+
     <input type="text" id="address" name="tags" value="Sydney, NSW" placeholder="Sydney, NSW">
+
+
     <input type="submit" value="get photos" >
 
   </form>
 
-  <div id="panel">
-    <input id="address" type="textbox" value="Sydney, NSW">
+<!--   <div id="panel">
+    <input type="textbox" id="address" value="Sydney, NSW">
     <input type="button" value="Geocode" onclick="codeAddress()">
-  </div>
+  </div> -->
 
 
   <div class="container">
+
+    <div class="flickr">
+
+    </div>
+
+    <br><hr><br>
     <!-- GOOGLE MAP OUTPUT -->
     <div id="map-canvas"></div>
   </div>

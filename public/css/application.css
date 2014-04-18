@@ -334,6 +334,14 @@ nav ul li {
 
 /* GOOGLE MAPS */
 
+map-canvas {
+  height: 60%;
+  width: 60%;
+  margin: 0px;
+  padding: 0px;
+}
+
+
 #map-canvas {
   height: 60%;
   width: 60%;
