@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
+  has_many :journeys
+  has_many :destinations, through: :journeys
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
-  validates :email, 
+  validates :email,
              presence: true,
              format: { with: VALID_EMAIL_REGEX },
              uniqueness: { case_sensitive: false }
@@ -13,9 +15,6 @@ class User < ActiveRecord::Base
 
   before_save { self.email = email.downcase }
 
-  has_many :surveys
-  has_many :results
-  has_many :completed_surveys
 
   include Gravtastic
 

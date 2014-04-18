@@ -14,7 +14,7 @@ body {
   font-family: Verdana;
   font-size:13px;
   color:#292f33;
-  margin: -10px auto 0 auto;
+  margin: 0px auto 0 auto;
   /*line-height: 18px;*/
 }
 
@@ -62,7 +62,7 @@ a:visited {
   width: 90%;
   padding: 0px 20px 20px 20px;
 /*  border: 1px solid black;*/
-  border-radius: 10px;
+/*  border-radius: 10px;*/
 }
 
 .container-sml {
@@ -90,16 +90,25 @@ a:visited {
 
 /*  HEADER   */
 #header {
-  border-bottom: 1px solid grey;
   position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  background-color: #38332d;
-  color: #fff;
+  background-color: transparent;
+  color: white;
   height: 60px;
   padding-right: 15px;
   z-index: 2;
+  text-shadow: 1px 1px #000;
+/*  text-shadow: 1px 1px #efb478;*/
+  margin-bottom:20px;
+}
+
+#header a {
+  color: white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #000;
 }
 
 h1 #app_name {

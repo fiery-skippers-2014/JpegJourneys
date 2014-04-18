@@ -1,0 +1,13 @@
+<div id="content" class="main container-mid">
+
+<% if @users_journeys %>
+  <% for journey in @users_journeys %>
+    <b><a href="/users/<%= journey.user_id %>/journeys/<%= journey.id %>"><%= journey.title %></a></b><br>
+    Description: <%= journey.description %><br>
+    Destinations: <%= journey.destinations.count %><br>
+
+    <hr><br>
+  <% end %>
+<% end %>
+
+</div>

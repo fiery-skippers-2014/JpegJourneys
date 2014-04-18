@@ -1,0 +1,58 @@
+<!--
+<div id="content" class="main container-mid">
+
+    <div id="panel">
+      <input id="address" type="textbox" value="Sydney, NSW">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+    </div>
+
+    <div id="map-canvas"></div>
+
+  </div>
+</div>
+
+</div> -->
+
+
+
+<div id="content" class="main container-mid">
+
+
+  <div class="profile">
+
+    Journey ID: <span class="indented"><%= @journey.id %></span><br>
+    User ID: <span class="indented"><%= @journey.user_id %></span><br>
+    Description: <span class="indented"><%= @journey.description %></span><br><br>
+    Created: <span class="indented"><%= @user.created_at.strftime("%b %d, %y") %></span><br>
+    Last Updated: <span class="indented"><%= @user.updated_at.strftime("%b %d, %y") %></span>
+  </div>
+
+
+
+  <% if @logged_in_user == current_user %>
+  <div class="indented">
+    <span>
+      <a href="/users/<%= @user.id %>/journeys/<%= @journey.id %>/delete"><button type="button" id="bttn" class="brown">Delete Account</button></a>
+    </span>
+  </div>
+  <% end %>
+
+  <br><hr><hr><br>
+
+  <div class="container-mid">
+
+    <!-- Create a journey -->
+    <% if @logged_in_user %>
+      <% if @user.id == @logged_in_user.id %>
+      <!-- This user can create their own survey -->
+
+      <a href="/photos/new">Create a Destination</a>
+
+      <!-- <a href="/users/<%= @logged_in_user.id %>/journeys/<%= @journey.id %>/destinations/new">Create a Destination</a> -->
+
+      <% end %>
+    <% end %>
+
+    <br><br>
+  </div>
+</div>

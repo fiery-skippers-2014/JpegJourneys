@@ -26,11 +26,6 @@ end
 
 
 
-
-
-
-
-
 # LOG OUT
 get '/logout' do
   session[:user_id] = nil

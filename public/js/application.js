@@ -93,7 +93,7 @@ var handler = function(event){
     console.log("DOFLICKER")
 
     var jqxhr = $.ajax({
-      url: '/photos',
+      url: "/photos",
       type: "POST",
       data: {tags: $("#address").val()},
       success: function(data){
