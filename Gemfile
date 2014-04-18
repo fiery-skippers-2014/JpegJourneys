@@ -21,6 +21,8 @@ gem 'flickraw'
 gem 'httparty'
 gem 'dotenv'
 gem 'shotgun'
+gem 'json'
+gem 'oauth2'
 
 group :test do
   gem 'shoulda-matchers'
