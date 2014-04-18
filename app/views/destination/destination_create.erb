@@ -1,33 +1,29 @@
-<div class="container">
+<div id="content" class="main container-mid">
 
-  <form class="destination" action="/destination/create" method="post">
 
+  <form class="destination" action="/users/<%= @user.id %>/journeys/<%= @journey.id %>/destinations/new" method="post">
     <label for="user">Create a destination</label>
 
-    <input type="text" id="address" name="tags" value="Sydney, NSW" placeholder="Sydney, NSW">
-    <input type="submit" value="get photos" >
+    <input type="text" id="journey_id" name="journey_id" value="<%= @journey.id.to_i %>" placeholder="<%= @journey.id.to_i %>">
 
+    <input type="text" id="address" name="tags" value="Sydney, NSW" placeholder="Sydney, NSW">
+
+    <input type="submit" value="get photos" >
   </form>
 
-<!--   <div id="panel">
-    <input type="textbox" id="address" value="Sydney, NSW">
-    <input type="button" value="Geocode" onclick="codeAddress()">
-  </div> -->
 
 
   <div class="container">
 
-    <div class="flickr">
-
-    </div>
+    <!-- FLICKER OUTPUT -->
+    <div class="flickr"></div>
 
     <br><hr><br>
+
     <!-- GOOGLE MAP OUTPUT -->
     <div id="map-canvas"></div>
+
   </div>
-
-
-
 
 </div>
 <!--
