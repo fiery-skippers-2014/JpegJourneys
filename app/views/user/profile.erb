@@ -15,13 +15,15 @@
   <hr><hr>
   <br>
 
+
+
   <div class="container-mid">
 
 <!-- Create a journey -->
     <% if @logged_in_user %>
       <% if @user.id == @logged_in_user.id %>
         <!-- This user can create their own survey -->
-        <%= erb :'journey/_create' %>
+        <a href="/users/<%= @logged_in_user.id %>/journeys/new">Create a Journey</a>
       <% end %>
     <% end %>
 
@@ -30,27 +32,8 @@
     <!-- This User's surveys -->
     <h3><%= @user.name %> has created <%= @users_journeys.count %> Survey(s)</h3>
     <hr>
-    <%= erb :'journey/_show_all', :layout => false, :locals => {:journeys => @users_journeys}  %>
-
+<!--     <%= erb :'journey/_show_all', :layout => false, :locals => {:journeys => @users_journeys}  %>
+ -->
     <br><br>
-  </div>
-</div>
-
-
-
-
-
-
-
-<!-- GOOGLE MAP INPUT AND OUTPUT -->
-    <div id="panel">
-      <input id="address" type="textbox" value="Sydney, NSW">
-      <input type="button" value="Geocode" onclick="codeAddress()">
-    </div>
-
-    <div id="map-canvas"></div>
-<!-- -->
-
-
   </div>
 </div>
